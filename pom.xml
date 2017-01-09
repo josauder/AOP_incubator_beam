@@ -132,7 +132,7 @@
     <stax2.version>3.1.4</stax2.version>
     <storage.version>v1-rev71-1.22.0</storage.version>
     <woodstox.version>4.4.1</woodstox.version>
-    
+    <aspectj.version>1.8.9</aspectj.version>
     <compiler.error.flag>-Werror</compiler.error.flag>
     <compiler.default.pkginfo.flag>-Xpkginfo:always</compiler.default.pkginfo.flag>
     <compiler.default.exclude>nothing</compiler.default.exclude>
@@ -756,7 +756,11 @@
         <artifactId>byte-buddy</artifactId>
         <version>1.5.5</version>
       </dependency>
-
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectj.version}</version>
+      </dependency>
       <!-- Testing -->
 
       <dependency>
@@ -865,7 +869,31 @@
             </execution>
           </executions>
         </plugin>
-
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>aspectj-maven-plugin</artifactId>
+          <version>1.9</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.aspectj</groupId>
+              <artifactId>aspectjtools</artifactId>
+              <version>${aspectj.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+            <complianceLevel>1.8</complianceLevel>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>       <!-- use this goal to weave all your main classes -->
+                <goal>test-compile</goal>  <!-- use this goal to weave all your test classes -->
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.5.1</version>
@@ -875,9 +903,7 @@
             <compilerArgs>
               <arg>-Xlint:all</arg>
               <arg>${compiler.error.flag}</arg>
-              <!-- Override options warnings to support cross-compilation -->
               <arg>-Xlint:-options</arg>
-              <!-- Temporary lint overrides, to be removed over time. -->
               <arg>-Xlint:-cast</arg>
               <arg>-Xlint:-deprecation</arg>
               <arg>-Xlint:-processing</arg>
@@ -886,12 +912,8 @@
               <arg>-Xlint:-try</arg>
               <arg>-Xlint:-unchecked</arg>
               <arg>-Xlint:-varargs</arg>
-              <!-- Uncomment the following args to display more warnings. -->
-              <!-- -Xmaxwarns -->
-              <!-- 10000 -->
             </compilerArgs>
             <showWarnings>true</showWarnings>
-            <!-- Another temp override, to be set to true in due course. -->
             <showDeprecation>false</showDeprecation>
           </configuration>
           <executions>
@@ -913,6 +935,7 @@
             </execution>
           </executions>
         </plugin>
+
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>

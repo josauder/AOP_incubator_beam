@@ -55,6 +55,11 @@
           <artifactId>beam-runners-direct-java</artifactId>
           <scope>runtime</scope>
         </dependency>
+        <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>${aspectj.version}</version>
+        </dependency>
       </dependencies>
     </profile>
 
