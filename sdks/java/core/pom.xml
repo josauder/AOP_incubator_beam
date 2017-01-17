@@ -405,6 +405,11 @@
       </exclusions>
     </dependency>
 
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>${aspectj.version}</version>
+    </dependency>
     <!-- To use org.apache.beam.io.AvroSource with XZ-encoded files, please explicitly 
       declare this dependency to include org.tukaani:xz on the classpath at runtime. -->
     <dependency>

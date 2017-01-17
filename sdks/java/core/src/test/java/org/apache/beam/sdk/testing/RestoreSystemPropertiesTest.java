@@ -37,8 +37,8 @@ public class RestoreSystemPropertiesTest {
    */
   @Test
   public void testThatPropertyIsClearedA() {
-    System.getProperties().put("TestA", "TestA");
-    assertNotNull(System.getProperty("TestA"));
+    System.getProperties().put("TransformAspect", "TransformAspect");
+    assertNotNull(System.getProperty("TransformAspect"));
     assertNull(System.getProperty("TestB"));
   }
 
@@ -46,6 +46,6 @@ public class RestoreSystemPropertiesTest {
   public void testThatPropertyIsClearedB() {
     System.getProperties().put("TestB", "TestB");
     assertNotNull(System.getProperty("TestB"));
-    assertNull(System.getProperty("TestA"));
+    assertNull(System.getProperty("TransformAspect"));
   }
 }
