@@ -10,6 +10,7 @@ public class Tree<K> {
     Tree<K> parent;
     K value;
     List<Tree<K>> children;
+    int count = 1;
 
     public Tree(K value, Tree<K> parent) {
         //System.out.println("");
@@ -46,15 +47,28 @@ public class Tree<K> {
         return this.value;
     }
 
+    public void incrementCounter() {
+        count+=1;
+        if (parent!=null) {
+            parent.incrementCounter();
+        }
+    }
+
     @Override
     public String toString(){
-        if (value == null) {
-            return "Node(null)";
+        return toString("");
+    }
+
+    public String toString(String indent) {
+        String out = indent;
+
+        if (value!=null) {
+            out += count + " - " +  value.toString().replace("org.apache.beam.","")+"\n";
         }
-        String out = "Node("+value.toString()+")";
+        indent += "   ";
         if (children.size()>0) {
             for (Tree<K> child : children) {
-                out += child.toString();
+                out += child.toString(indent);
             }
         }
         return out;

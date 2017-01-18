@@ -3,133 +3,342 @@ org.apache.beam:beam-runners-flink_2.10-examples:jar:0.4.0-incubating-SNAPSHOT
 |  +- org.apache.flink:flink-streaming-java_2.10:jar:1.1.2:compile
 |  |  +- org.apache.flink:flink-core:jar:1.1.2:compile
 |  |  |  +- org.apache.flink:flink-annotations:jar:1.1.2:compile
+|  |  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  |  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  |  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  |  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
 |  |  |  +- org.apache.flink:flink-metrics-core:jar:1.1.2:compile
-|  |  |  \- com.esotericsoftware.kryo:kryo:jar:2.24.0:compile
-|  |  |     +- com.esotericsoftware.minlog:minlog:jar:1.2:compile
-|  |  |     \- org.objenesis:objenesis:jar:2.1:compile
+|  |  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  |  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  |  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  |  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- com.esotericsoftware.kryo:kryo:jar:2.24.0:compile
+|  |  |  |  +- com.esotericsoftware.minlog:minlog:jar:1.2:compile
+|  |  |  |  \- org.objenesis:objenesis:jar:2.1:compile
+|  |  |  +- (org.apache.avro:avro:jar:1.8.1:compile - version managed from 1.7.6; omitted for duplicate)
+|  |  |  +- (org.apache.flink:flink-shaded-hadoop2:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
 |  |  +- org.apache.flink:flink-runtime_2.10:jar:1.1.2:compile
+|  |  |  +- (org.apache.flink:flink-core:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (org.apache.flink:flink-java:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (org.apache.flink:flink-shaded-hadoop2:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (commons-cli:commons-cli:jar:1.3.1:compile - omitted for duplicate)
 |  |  |  +- io.netty:netty-all:jar:4.0.27.Final:compile
 |  |  |  +- org.javassist:javassist:jar:3.18.2-GA:compile
+|  |  |  +- (org.scala-lang:scala-library:jar:2.10.4:compile - omitted for duplicate)
 |  |  |  +- com.typesafe.akka:akka-actor_2.10:jar:2.3.7:compile
+|  |  |  |  +- (org.scala-lang:scala-library:jar:2.10.4:compile - omitted for duplicate)
 |  |  |  |  \- com.typesafe:config:jar:1.2.1:compile
 |  |  |  +- com.typesafe.akka:akka-remote_2.10:jar:2.3.7:compile
+|  |  |  |  +- (org.scala-lang:scala-library:jar:2.10.4:compile - omitted for duplicate)
+|  |  |  |  +- (com.typesafe.akka:akka-actor_2.10:jar:2.3.7:compile - omitted for duplicate)
+|  |  |  |  +- (io.netty:netty:jar:3.8.0.Final:compile - omitted for conflict with 3.7.0.Final)
+|  |  |  |  +- (com.google.protobuf:protobuf-java:jar:3.0.0:compile - version managed from 2.5.0; omitted for duplicate)
 |  |  |  |  \- org.uncommons.maths:uncommons-maths:jar:1.2.2a:compile
 |  |  |  +- com.typesafe.akka:akka-slf4j_2.10:jar:2.3.7:compile
+|  |  |  |  +- (org.scala-lang:scala-library:jar:2.10.4:compile - omitted for duplicate)
+|  |  |  |  +- (com.typesafe.akka:akka-actor_2.10:jar:2.3.7:compile - omitted for duplicate)
+|  |  |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.5; omitted for duplicate)
 |  |  |  +- org.clapper:grizzled-slf4j_2.10:jar:1.0.2:compile
+|  |  |  |  +- (org.scala-lang:scala-library:jar:2.10.3:compile - omitted for conflict with 2.10.4)
+|  |  |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
 |  |  |  +- com.github.scopt:scopt_2.10:jar:3.2.0:compile
 |  |  |  +- io.dropwizard.metrics:metrics-core:jar:3.1.0:compile
+|  |  |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
 |  |  |  +- io.dropwizard.metrics:metrics-jvm:jar:3.1.0:compile
+|  |  |  |  +- (io.dropwizard.metrics:metrics-core:jar:3.1.0:compile - omitted for duplicate)
+|  |  |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
 |  |  |  +- io.dropwizard.metrics:metrics-json:jar:3.1.0:compile
-|  |  |  \- com.twitter:chill_2.10:jar:0.7.4:compile
-|  |  |     \- com.twitter:chill-java:jar:0.7.4:compile
+|  |  |  |  +- (io.dropwizard.metrics:metrics-core:jar:3.1.0:compile - omitted for duplicate)
+|  |  |  |  +- (com.fasterxml.jackson.core:jackson-databind:jar:2.7.2:compile - version managed from 2.4.2; omitted for duplicate)
+|  |  |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  +- (org.apache.zookeeper:zookeeper:jar:3.4.6:compile - omitted for duplicate)
+|  |  |  +- com.twitter:chill_2.10:jar:0.7.4:compile
+|  |  |  |  +- (org.scala-lang:scala-library:jar:2.10.5:compile - omitted for conflict with 2.10.4)
+|  |  |  |  +- com.twitter:chill-java:jar:0.7.4:compile
+|  |  |  |  |  \- (com.esotericsoftware.kryo:kryo:jar:2.21:compile - omitted for conflict with 2.24.0)
+|  |  |  |  \- (com.esotericsoftware.kryo:kryo:jar:2.21:compile - omitted for conflict with 2.24.0)
+|  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
+|  |  +- (org.apache.flink:flink-clients_2.10:jar:1.1.2:compile - omitted for duplicate)
 |  |  +- org.apache.commons:commons-math3:jar:3.5:compile
-|  |  \- org.apache.sling:org.apache.sling.commons.json:jar:2.0.6:compile
+|  |  +- org.apache.sling:org.apache.sling.commons.json:jar:2.0.6:compile
+|  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
 |  +- org.apache.flink:flink-java:jar:1.1.2:compile
-|  |  \- org.apache.flink:flink-shaded-hadoop2:jar:1.1.2:compile
-|  |     +- xmlenc:xmlenc:jar:0.52:compile
-|  |     +- commons-codec:commons-codec:jar:1.4:compile
-|  |     +- commons-io:commons-io:jar:2.4:compile
-|  |     +- commons-net:commons-net:jar:3.1:compile
-|  |     +- commons-collections:commons-collections:jar:3.2.1:compile
-|  |     +- javax.servlet:servlet-api:jar:2.5:compile
-|  |     +- org.mortbay.jetty:jetty-util:jar:6.1.26:compile
-|  |     +- com.sun.jersey:jersey-core:jar:1.9:compile
-|  |     +- commons-el:commons-el:jar:1.0:runtime
-|  |     +- commons-logging:commons-logging:jar:1.1.3:compile
-|  |     +- com.jamesmurty.utils:java-xmlbuilder:jar:0.4:compile
-|  |     +- commons-lang:commons-lang:jar:2.6:compile
-|  |     +- commons-configuration:commons-configuration:jar:1.7:compile
-|  |     +- commons-digester:commons-digester:jar:1.8.1:compile
-|  |     +- org.codehaus.jackson:jackson-core-asl:jar:1.8.8:compile
-|  |     +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.8:compile
-|  |     +- com.thoughtworks.paranamer:paranamer:jar:2.3:compile
-|  |     +- com.jcraft:jsch:jar:0.1.42:compile
-|  |     +- org.tukaani:xz:jar:1.0:compile
-|  |     +- commons-beanutils:commons-beanutils-bean-collections:jar:1.8.3:compile
-|  |     +- commons-daemon:commons-daemon:jar:1.0.13:compile
-|  |     +- javax.xml.bind:jaxb-api:jar:2.2.2:compile
-|  |     +- javax.xml.stream:stax-api:jar:1.0-2:compile
-|  |     +- javax.activation:activation:jar:1.1:compile
-|  |     +- com.google.inject:guice:jar:3.0:compile
-|  |     +- javax.inject:javax.inject:jar:1:compile
-|  |     \- aopalliance:aopalliance:jar:1.0:compile
+|  |  +- (org.apache.flink:flink-core:jar:1.1.2:compile - omitted for duplicate)
+|  |  +- org.apache.flink:flink-shaded-hadoop2:jar:1.1.2:compile
+|  |  |  +- (commons-cli:commons-cli:jar:1.3.1:compile - omitted for duplicate)
+|  |  |  +- (org.apache.commons:commons-math3:jar:3.5:compile - omitted for duplicate)
+|  |  |  +- xmlenc:xmlenc:jar:0.52:compile
+|  |  |  +- commons-codec:commons-codec:jar:1.4:compile
+|  |  |  +- commons-io:commons-io:jar:2.4:compile
+|  |  |  +- commons-net:commons-net:jar:3.1:compile
+|  |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+|  |  |  +- javax.servlet:servlet-api:jar:2.5:compile
+|  |  |  +- org.mortbay.jetty:jetty-util:jar:6.1.26:compile
+|  |  |  +- com.sun.jersey:jersey-core:jar:1.9:compile
+|  |  |  +- commons-el:commons-el:jar:1.0:runtime
+|  |  |  |  \- (commons-logging:commons-logging:jar:1.0.3:runtime - omitted for conflict with 1.1.3)
+|  |  |  +- commons-logging:commons-logging:jar:1.1.3:compile
+|  |  |  +- com.jamesmurty.utils:java-xmlbuilder:jar:0.4:compile
+|  |  |  +- commons-lang:commons-lang:jar:2.6:compile
+|  |  |  +- commons-configuration:commons-configuration:jar:1.7:compile
+|  |  |  |  +- (commons-collections:commons-collections:jar:3.2.1:compile - omitted for duplicate)
+|  |  |  |  +- (commons-lang:commons-lang:jar:2.6:compile - omitted for duplicate)
+|  |  |  |  +- (commons-logging:commons-logging:jar:1.1.1:compile - omitted for conflict with 1.1.3)
+|  |  |  |  \- (commons-digester:commons-digester:jar:1.8.1:compile - omitted for duplicate)
+|  |  |  +- commons-digester:commons-digester:jar:1.8.1:compile
+|  |  |  |  \- (commons-logging:commons-logging:jar:1.1.1:compile - omitted for conflict with 1.1.3)
+|  |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.8:compile
+|  |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.8:compile
+|  |  |  |  \- (org.codehaus.jackson:jackson-core-asl:jar:1.8.8:compile - omitted for duplicate)
+|  |  |  +- (org.apache.avro:avro:jar:1.8.1:compile - version managed from 1.7.6; omitted for duplicate)
+|  |  |  +- com.thoughtworks.paranamer:paranamer:jar:2.3:compile
+|  |  |  +- (org.xerial.snappy:snappy-java:jar:1.0.5:compile - omitted for conflict with 1.1.2.1)
+|  |  |  +- com.jcraft:jsch:jar:0.1.42:compile
+|  |  |  +- (org.apache.zookeeper:zookeeper:jar:3.4.6:compile - omitted for duplicate)
+|  |  |  +- (org.apache.commons:commons-compress:jar:1.4.1:compile - omitted for conflict with 1.9)
+|  |  |  +- org.tukaani:xz:jar:1.0:compile
+|  |  |  +- commons-beanutils:commons-beanutils-bean-collections:jar:1.8.3:compile
+|  |  |  |  \- (commons-logging:commons-logging:jar:1.1.1:compile - omitted for conflict with 1.1.3)
+|  |  |  +- commons-daemon:commons-daemon:jar:1.0.13:compile
+|  |  |  +- javax.xml.bind:jaxb-api:jar:2.2.2:compile
+|  |  |  |  +- (javax.xml.stream:stax-api:jar:1.0-2:compile - omitted for duplicate)
+|  |  |  |  \- (javax.activation:activation:jar:1.1:compile - omitted for duplicate)
+|  |  |  +- javax.xml.stream:stax-api:jar:1.0-2:compile
+|  |  |  +- javax.activation:activation:jar:1.1:compile
+|  |  |  +- com.google.inject:guice:jar:3.0:compile
+|  |  |  |  +- (javax.inject:javax.inject:jar:1:compile - omitted for duplicate)
+|  |  |  |  \- (aopalliance:aopalliance:jar:1.0:compile - omitted for duplicate)
+|  |  |  +- javax.inject:javax.inject:jar:1:compile
+|  |  |  +- aopalliance:aopalliance:jar:1.0:compile
+|  |  |  +- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  |  \- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  +- (org.apache.commons:commons-math3:jar:3.5:compile - omitted for duplicate)
+|  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
 |  +- org.apache.flink:flink-clients_2.10:jar:1.1.2:compile
+|  |  +- (org.apache.flink:flink-core:jar:1.1.2:compile - omitted for duplicate)
+|  |  +- (org.apache.flink:flink-runtime_2.10:jar:1.1.2:compile - omitted for duplicate)
 |  |  +- org.apache.flink:flink-optimizer_2.10:jar:1.1.2:compile
-|  |  \- commons-cli:commons-cli:jar:1.3.1:compile
+|  |  |  +- (org.apache.flink:flink-core:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (org.apache.flink:flink-runtime_2.10:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (org.apache.flink:flink-java:jar:1.1.2:compile - omitted for duplicate)
+|  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
+|  |  +- (org.apache.flink:flink-java:jar:1.1.2:compile - omitted for duplicate)
+|  |  +- commons-cli:commons-cli:jar:1.3.1:compile
+|  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+|  |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+|  |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+|  |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
 |  +- org.apache.beam:beam-sdks-java-core:jar:0.4.0-incubating-SNAPSHOT:compile
 |  |  +- io.grpc:grpc-auth:jar:1.0.1:compile
+|  |  |  +- (com.google.auth:google-auth-library-credentials:jar:0.6.0:compile - version managed from 0.4.0; omitted for duplicate)
+|  |  |  \- (io.grpc:grpc-core:jar:1.0.1:compile - omitted for duplicate)
 |  |  +- io.grpc:grpc-core:jar:1.0.1:compile
-|  |  |  \- io.grpc:grpc-context:jar:1.0.1:compile
+|  |  |  +- (com.google.guava:guava:jar:19.0:compile - version managed from 18.0; omitted for duplicate)
+|  |  |  +- io.grpc:grpc-context:jar:1.0.1:compile
+|  |  |  \- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 3.0.0; omitted for duplicate)
 |  |  +- io.grpc:grpc-netty:jar:1.0.1:compile
-|  |  |  \- io.netty:netty-codec-http2:jar:4.1.3.Final:compile (version selected from constraint [4.1.3.Final,4.1.3.Final])
-|  |  |     \- io.netty:netty-codec-http:jar:4.1.3.Final:compile
+|  |  |  +- io.netty:netty-codec-http2:jar:4.1.3.Final:compile
+|  |  |  |  +- io.netty:netty-codec-http:jar:4.1.3.Final:compile
+|  |  |  |  |  \- (io.netty:netty-codec:jar:4.1.3.Final:compile - omitted for duplicate)
+|  |  |  |  \- (io.netty:netty-handler:jar:4.1.3.Final:compile - omitted for duplicate)
+|  |  |  \- (io.grpc:grpc-core:jar:1.0.1:compile - omitted for duplicate)
 |  |  +- io.grpc:grpc-stub:jar:1.0.1:compile
+|  |  |  \- (io.grpc:grpc-core:jar:1.0.1:compile - omitted for duplicate)
 |  |  +- io.grpc:grpc-all:jar:1.0.1:runtime
+|  |  |  +- (io.grpc:grpc-auth:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  +- (io.grpc:grpc-context:jar:1.0.1:runtime - omitted for duplicate)
 |  |  |  +- io.grpc:grpc-protobuf:jar:1.0.1:runtime
-|  |  |  |  \- com.google.protobuf:protobuf-java-util:jar:3.0.0:runtime
-|  |  |  |     \- com.google.code.gson:gson:jar:2.3:runtime
+|  |  |  |  +- (com.google.guava:guava:jar:19.0:runtime - omitted for duplicate)
+|  |  |  |  +- (com.google.protobuf:protobuf-java:jar:3.0.0:runtime - version managed from 2.5.0; omitted for duplicate)
+|  |  |  |  +- com.google.protobuf:protobuf-java-util:jar:3.0.0:runtime
+|  |  |  |  |  +- (com.google.protobuf:protobuf-java:jar:3.0.0:runtime - version managed from 2.5.0; omitted for duplicate)
+|  |  |  |  |  +- (com.google.guava:guava:jar:19.0:runtime - version managed from 18.0; omitted for duplicate)
+|  |  |  |  |  \- com.google.code.gson:gson:jar:2.3:runtime
+|  |  |  |  +- (io.grpc:grpc-core:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  |  \- (io.grpc:grpc-protobuf-lite:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  +- (io.grpc:grpc-netty:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  +- (io.grpc:grpc-stub:jar:1.0.1:runtime - omitted for duplicate)
 |  |  |  +- io.grpc:grpc-protobuf-nano:jar:1.0.1:runtime
-|  |  |  |  \- com.google.protobuf.nano:protobuf-javanano:jar:3.0.0-alpha-5:runtime
-|  |  |  \- io.grpc:grpc-okhttp:jar:1.0.1:runtime
-|  |  |     +- com.squareup.okio:okio:jar:1.6.0:runtime
-|  |  |     \- com.squareup.okhttp:okhttp:jar:2.5.0:runtime
+|  |  |  |  +- (com.google.guava:guava:jar:19.0:runtime - version managed from 18.0; omitted for duplicate)
+|  |  |  |  +- com.google.protobuf.nano:protobuf-javanano:jar:3.0.0-alpha-5:runtime
+|  |  |  |  \- (io.grpc:grpc-core:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  +- (io.grpc:grpc-core:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  +- io.grpc:grpc-okhttp:jar:1.0.1:runtime
+|  |  |  |  +- com.squareup.okio:okio:jar:1.6.0:runtime
+|  |  |  |  +- com.squareup.okhttp:okhttp:jar:2.5.0:runtime
+|  |  |  |  |  \- (com.squareup.okio:okio:jar:1.6.0:runtime - omitted for duplicate)
+|  |  |  |  \- (io.grpc:grpc-core:jar:1.0.1:runtime - omitted for duplicate)
+|  |  |  \- (io.grpc:grpc-protobuf-lite:jar:1.0.1:runtime - omitted for duplicate)
 |  |  +- io.grpc:grpc-protobuf-lite:jar:1.0.1:runtime
+|  |  |  +- (com.google.guava:guava:jar:19.0:runtime - version managed from 18.0; omitted for duplicate)
+|  |  |  +- (com.google.protobuf:protobuf-lite:jar:3.0.1:runtime - omitted for duplicate)
+|  |  |  \- (io.grpc:grpc-core:jar:1.0.1:runtime - omitted for duplicate)
 |  |  +- com.google.protobuf:protobuf-lite:jar:3.0.1:runtime
 |  |  +- com.google.auth:google-auth-library-credentials:jar:0.6.0:compile
 |  |  +- com.google.auth:google-auth-library-oauth2-http:jar:0.6.0:compile
+|  |  |  +- (com.google.auth:google-auth-library-credentials:jar:0.6.0:compile - version managed from 0.4.0; omitted for duplicate)
+|  |  |  +- (com.google.http-client:google-http-client:jar:1.22.0:compile - version managed from 1.19.0; omitted for duplicate)
+|  |  |  +- (com.google.http-client:google-http-client-jackson2:jar:1.22.0:compile - version managed from 1.19.0; omitted for duplicate)
+|  |  |  \- (com.google.guava:guava:jar:19.0:compile - version managed from 18.0; omitted for duplicate)
 |  |  +- io.netty:netty-handler:jar:4.1.3.Final:compile
 |  |  |  +- io.netty:netty-buffer:jar:4.1.3.Final:compile
 |  |  |  |  \- io.netty:netty-common:jar:4.1.3.Final:compile
 |  |  |  +- io.netty:netty-transport:jar:4.1.3.Final:compile
+|  |  |  |  +- (io.netty:netty-buffer:jar:4.1.3.Final:compile - omitted for duplicate)
 |  |  |  |  \- io.netty:netty-resolver:jar:4.1.3.Final:compile
+|  |  |  |     \- (io.netty:netty-common:jar:4.1.3.Final:compile - omitted for duplicate)
 |  |  |  \- io.netty:netty-codec:jar:4.1.3.Final:compile
+|  |  |     \- (io.netty:netty-transport:jar:4.1.3.Final:compile - omitted for duplicate)
 |  |  +- com.google.api.grpc:grpc-google-pubsub-v1:jar:0.1.0:compile
+|  |  |  +- (com.google.protobuf:protobuf-java:jar:3.0.0:compile - version managed from 2.6.1; omitted for duplicate)
 |  |  |  +- com.google.api.grpc:grpc-google-common-protos:jar:0.1.0:compile
+|  |  |  |  \- (com.google.protobuf:protobuf-java:jar:3.0.0:compile - version managed from 2.5.0; omitted for duplicate)
 |  |  |  \- com.google.api.grpc:grpc-google-iam-v1:jar:0.1.0:compile
+|  |  |     \- (com.google.protobuf:protobuf-java:jar:3.0.0:compile - version managed from 2.5.0; omitted for duplicate)
 |  |  +- com.google.api-client:google-api-client:jar:1.22.0:compile
+|  |  |  +- (com.google.oauth-client:google-oauth-client:jar:1.22.0:compile - omitted for duplicate)
+|  |  |  \- (com.google.http-client:google-http-client-jackson2:jar:1.22.0:compile - version managed from 1.19.0; omitted for duplicate)
 |  |  +- com.google.apis:google-api-services-bigquery:jar:v2-rev295-1.22.0:compile
+|  |  |  \- (com.google.api-client:google-api-client:jar:1.22.0:compile - omitted for duplicate)
 |  |  +- com.google.apis:google-api-services-cloudresourcemanager:jar:v1-rev6-1.22.0:compile
+|  |  |  \- (com.google.api-client:google-api-client:jar:1.22.0:compile - omitted for duplicate)
 |  |  +- com.google.apis:google-api-services-pubsub:jar:v1-rev10-1.22.0:compile
+|  |  |  \- (com.google.api-client:google-api-client:jar:1.22.0:compile - omitted for duplicate)
 |  |  +- com.google.apis:google-api-services-storage:jar:v1-rev71-1.22.0:compile
+|  |  |  \- (com.google.api-client:google-api-client:jar:1.22.0:compile - omitted for duplicate)
 |  |  +- com.google.http-client:google-http-client:jar:1.22.0:compile
+|  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
 |  |  |  \- org.apache.httpcomponents:httpclient:jar:4.0.1:compile
-|  |  |     \- org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+|  |  |     +- org.apache.httpcomponents:httpcore:jar:4.0.1:compile
+|  |  |     +- (commons-logging:commons-logging:jar:1.1.1:compile - omitted for conflict with 1.1.3)
+|  |  |     \- (commons-codec:commons-codec:jar:1.3:compile - omitted for conflict with 1.4)
 |  |  +- com.google.http-client:google-http-client-jackson:jar:1.22.0:runtime
+|  |  |  \- (com.google.http-client:google-http-client:jar:1.22.0:runtime - version managed from 1.19.0; omitted for duplicate)
 |  |  +- com.google.http-client:google-http-client-jackson2:jar:1.22.0:compile
+|  |  |  +- (com.google.http-client:google-http-client:jar:1.22.0:compile - version managed from 1.19.0; omitted for duplicate)
+|  |  |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.7.2:compile - version managed from 2.1.3; omitted for duplicate)
 |  |  +- com.google.http-client:google-http-client-protobuf:jar:1.22.0:runtime
+|  |  |  +- (com.google.http-client:google-http-client:jar:1.22.0:runtime - version managed from 1.19.0; omitted for duplicate)
+|  |  |  \- (com.google.protobuf:protobuf-java:jar:3.0.0:runtime - version managed from 2.6.1; omitted for duplicate)
 |  |  +- com.google.oauth-client:google-oauth-client:jar:1.22.0:compile
+|  |  |  +- (com.google.http-client:google-http-client:jar:1.22.0:compile - version managed from 1.19.0; omitted for duplicate)
+|  |  |  \- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
 |  |  +- com.google.cloud.bigdataoss:gcsio:jar:1.4.5:compile
-|  |  |  +- com.google.api-client:google-api-client-java6:jar:1.22.0:compile
-|  |  |  +- com.google.api-client:google-api-client-jackson2:jar:1.22.0:compile
-|  |  |  \- com.google.oauth-client:google-oauth-client-java6:jar:1.22.0:compile
+|  |  |  +- com.google.api-client:google-api-client-java6:jar:1.22.0:compile (version managed from 1.20.0)
+|  |  |  |  +- (com.google.api-client:google-api-client:jar:1.22.0:compile - omitted for duplicate)
+|  |  |  |  \- (com.google.oauth-client:google-oauth-client-java6:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
+|  |  |  +- com.google.api-client:google-api-client-jackson2:jar:1.22.0:compile (version managed from 1.20.0)
+|  |  |  |  +- (com.google.api-client:google-api-client:jar:1.22.0:compile - omitted for duplicate)
+|  |  |  |  \- (com.google.http-client:google-http-client-jackson2:jar:1.22.0:compile - version managed from 1.19.0; omitted for duplicate)
+|  |  |  +- (com.google.apis:google-api-services-storage:jar:v1-rev71-1.22.0:compile - version managed from v1-rev35-1.20.0; omitted for duplicate)
+|  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 2.0.3; omitted for duplicate)
+|  |  |  +- (com.google.guava:guava:jar:19.0:compile - version managed from 18.0; omitted for duplicate)
+|  |  |  +- (com.google.oauth-client:google-oauth-client:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
+|  |  |  +- com.google.oauth-client:google-oauth-client-java6:jar:1.22.0:compile
+|  |  |  |  \- (com.google.oauth-client:google-oauth-client:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
+|  |  |  \- (com.google.cloud.bigdataoss:util:jar:1.4.5:compile - omitted for duplicate)
 |  |  +- com.google.cloud.bigdataoss:util:jar:1.4.5:compile
+|  |  |  +- (com.google.api-client:google-api-client-java6:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
+|  |  |  +- (com.google.api-client:google-api-client-jackson2:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
+|  |  |  +- (com.google.apis:google-api-services-storage:jar:v1-rev71-1.22.0:compile - version managed from v1-rev35-1.20.0; omitted for duplicate)
+|  |  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 2.0.3; omitted for duplicate)
+|  |  |  +- (com.google.guava:guava:jar:19.0:compile - version managed from 18.0; omitted for duplicate)
+|  |  |  +- (com.google.oauth-client:google-oauth-client:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
+|  |  |  \- (com.google.oauth-client:google-oauth-client-java6:jar:1.22.0:compile - version managed from 1.20.0; omitted for duplicate)
 |  |  +- com.google.guava:guava:jar:19.0:compile
 |  |  +- com.google.protobuf:protobuf-java:jar:3.0.0:compile
+|  |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 2.0.3; omitted for duplicate)
 |  |  +- com.fasterxml.jackson.core:jackson-core:jar:2.7.2:compile
 |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.7.2:compile
 |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.7.2:compile
+|  |  |  +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.7.2:compile - version managed from 2.7.0; omitted for duplicate)
+|  |  |  \- (com.fasterxml.jackson.core:jackson-core:jar:2.7.2:compile - version managed from 2.1.3; omitted for duplicate)
+|  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
 |  |  +- net.bytebuddy:byte-buddy:jar:1.5.5:compile
 |  |  +- org.apache.avro:avro:jar:1.8.1:compile
+|  |  |  +- (org.codehaus.jackson:jackson-core-asl:jar:1.9.13:compile - omitted for conflict with 1.8.8)
+|  |  |  +- (org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13:compile - omitted for conflict with 1.8.8)
+|  |  |  +- (com.thoughtworks.paranamer:paranamer:jar:2.7:compile - omitted for conflict with 2.3)
+|  |  |  +- (org.xerial.snappy:snappy-java:jar:1.1.1.3:compile - omitted for conflict with 1.0.5)
+|  |  |  +- (org.apache.commons:commons-compress:jar:1.8.1:compile - omitted for conflict with 1.4.1)
+|  |  |  +- (org.tukaani:xz:jar:1.5:compile - omitted for conflict with 1.0)
+|  |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
 |  |  +- org.xerial.snappy:snappy-java:jar:1.1.2.1:compile
 |  |  +- org.apache.commons:commons-compress:jar:1.9:compile
-|  |  \- joda-time:joda-time:jar:2.4:compile
+|  |  +- joda-time:joda-time:jar:2.4:compile
+|  |  \- org.aspectj:aspectjrt:jar:1.8.9:compile
 |  \- org.apache.beam:beam-runners-core-java:jar:0.4.0-incubating-SNAPSHOT:compile
+|     +- (org.apache.beam:beam-sdks-java-core:jar:0.4.0-incubating-SNAPSHOT:compile - omitted for duplicate)
+|     +- (com.fasterxml.jackson.core:jackson-annotations:jar:2.7.2:compile - version managed from 2.7.0; omitted for duplicate)
+|     +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 2.0.3; omitted for duplicate)
+|     +- (com.google.guava:guava:jar:19.0:compile - version managed from 18.0; omitted for duplicate)
+|     +- (joda-time:joda-time:jar:2.4:compile - omitted for duplicate)
+|     \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
 \- org.apache.flink:flink-connector-kafka-0.8_2.10:jar:1.1.2:compile
    +- org.apache.flink:flink-connector-kafka-base_2.10:jar:1.1.2:compile
+   |  +- (org.apache.kafka:kafka_2.10:jar:0.8.2.2:compile - omitted for duplicate)
+   |  +- (com.google.code.findbugs:jsr305:jar:3.0.1:compile - version managed from 1.3.9; omitted for duplicate)
+   |  +- (org.apache.commons:commons-lang3:jar:3.3.2:compile - omitted for duplicate)
+   |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+   |  +- (org.slf4j:slf4j-log4j12:jar:1.7.7:compile - omitted for duplicate)
+   |  +- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
+   |  \- (org.apache.flink:force-shading:jar:1.1.2:compile - omitted for duplicate)
    +- org.apache.kafka:kafka_2.10:jar:0.8.2.2:compile
    |  +- org.apache.kafka:kafka-clients:jar:0.8.2.2:compile
+   |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.6; omitted for duplicate)
    |  |  \- net.jpountz.lz4:lz4:jar:1.2.0:compile
    |  +- com.yammer.metrics:metrics-core:jar:2.2.0:compile
+   |  |  \- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.2; omitted for duplicate)
    |  +- org.scala-lang:scala-library:jar:2.10.4:compile
    |  +- org.apache.zookeeper:zookeeper:jar:3.4.6:compile
+   |  |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.6.1; omitted for duplicate)
+   |  |  +- (org.slf4j:slf4j-log4j12:jar:1.6.1:compile - omitted for conflict with 1.7.7)
    |  |  +- jline:jline:jar:0.9.94:compile
-   |  |  |  \- junit:junit:jar:4.11:test
+   |  |  |  \- junit:junit:jar:4.11:test (version managed from 3.8.1; scope managed from compile)
    |  |  |     \- org.hamcrest:hamcrest-core:jar:1.3:test
    |  |  \- io.netty:netty:jar:3.7.0.Final:compile
    |  \- com.101tec:zkclient:jar:0.3:compile
+   |     \- (org.apache.zookeeper:zookeeper:jar:3.3.1:compile - omitted for conflict with 3.4.6)
    +- com.google.code.findbugs:jsr305:jar:3.0.1:compile
    +- org.apache.commons:commons-lang3:jar:3.3.2:compile
    +- org.slf4j:slf4j-api:jar:1.7.14:compile
    +- org.slf4j:slf4j-log4j12:jar:1.7.7:compile
+   |  +- (org.slf4j:slf4j-api:jar:1.7.14:compile - version managed from 1.7.7; omitted for duplicate)
+   |  \- (log4j:log4j:jar:1.2.17:compile - omitted for duplicate)
    +- log4j:log4j:jar:1.2.17:compile
    \- org.apache.flink:force-shading:jar:1.1.2:compile

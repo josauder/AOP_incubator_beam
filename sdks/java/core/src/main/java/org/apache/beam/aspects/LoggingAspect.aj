@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  * Created by jonathan on 10.01.17.
  */
 
-aspect TransformAspect {
+aspect LoggingAspect {
         Logger logger = LoggerFactory.getLogger(this.getClass());
  /**   public interface Validable<T> {};
     declare parents: (View.AsSingleton<T> || View.AsIterable<T> || View.AsList<T>) implements Validable<T>;
@@ -38,7 +38,7 @@ aspect TransformAspect {
         pointcut test() : //target(org.apache.beam.sdk.transforms.DoFn+) &&
                 execution(* populateDisplayData(..)) && within(org.apache.beam.sdk.transforms.PTransform+) ;
   //      public pointcut test() : call(* *.DoFn+.*(**));
-        before (): test() /*&& (!within(TransformAspect))*/ {
+        before (): test() /*&& (!within(LoggingAspect))*/ {
 
        //         logger.info(thisJoinPoint.getSignature().toString());
         }
