@@ -881,9 +881,15 @@
             </dependency>
           </dependencies>
           <configuration>
+            <showWeaveInfo>true</showWeaveInfo>
             <source>1.7</source>
             <target>1.7</target>
             <complianceLevel>1.8</complianceLevel>
+            <excludes>
+              <exclude>**/TimerSpecs.java</exclude>
+              <exclude>**/AutoValue*.java</exclude>
+              <exclude>**/PipelineOptionSpec*.java</exclude>
+            </excludes>
           </configuration>
           <executions>
             <execution>

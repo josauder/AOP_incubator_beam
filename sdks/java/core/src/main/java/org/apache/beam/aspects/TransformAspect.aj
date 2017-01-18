@@ -1,4 +1,4 @@
-package org.apache.beam.sdk.transforms;
+package org.apache.beam.aspects;
 
 import org.apache.beam.sdk.transforms.display.DisplayData;
 import org.apache.beam.sdk.values.PCollection;
@@ -39,6 +39,7 @@ aspect TransformAspect {
                 execution(* populateDisplayData(..)) && within(org.apache.beam.sdk.transforms.PTransform+) ;
   //      public pointcut test() : call(* *.DoFn+.*(**));
         before (): test() /*&& (!within(TransformAspect))*/ {
+
        //         logger.info(thisJoinPoint.getSignature().toString());
         }
 }
