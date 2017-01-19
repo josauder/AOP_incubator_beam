@@ -171,7 +171,7 @@ public class Pipeline {
    * Runs the {@link Pipeline} using its {@link PipelineRunner}.
    */
   public PipelineResult run() {
-    LOG.debug("Running {} via {}", this, runner);
+    //LOG.debug("Running {} via {}", this, runner);
     try {
       return runner.run(this);
     } catch (UserCodeException e) {
@@ -377,7 +377,7 @@ public class Pipeline {
       }
     }
 
-    LOG.debug("Adding {} to {}", transform, this);
+    //LOG.debug("Adding {} to {}", transform, this);
     transforms.pushNode(uniqueName, input, transform);
     try {
       transforms.finishSpecifyingInput();

@@ -1,5 +1,6 @@
 package org.apache.beam.aspects;
 
+import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.runners.TransformHierarchy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,28 +15,37 @@ aspect LoggingAspect {
 
     pointcut project() : within(org.apache.beam.*.*) && !within(org.apache.beam.aspects.*);
 
+
+    pointcut pipeline(org.apache.beam.sdk.Pipeline p) : this(p)  && project();
+
     pointcut pushNode(
             org.apache.beam.sdk.Pipeline p,
             java.lang.String s,
             org.apache.beam.sdk.values.PInput in,
-            org.apache.beam.sdk.transforms.PTransform t): this(p)
+            org.apache.beam.sdk.transforms.PTransform t):
+        pipeline(p)
         && call(* pushNode(..))
         && args(s,in,t)
-        && target(org.apache.beam.sdk.runners.TransformHierarchy)
-        && project();
+        //&& target(org.apache.beam.sdk.runners.TransformHierarchy)
+       ;
 
     before (org.apache.beam.sdk.Pipeline p,
             java.lang.String s,
             org.apache.beam.sdk.values.PInput in,
             org.apache.beam.sdk.transforms.PTransform t): pushNode(p,s,in,t)  {//args(org.apache.beam.sdk.)  /*&& (!within(LoggingAspect))*/ {
-        LoggerFactory.getLogger(TransformHierarchy.class)
+        LoggerFactory.getLogger(p.getClass())
                 .info("Adding {} to {}", t, p);
+
         //    .debug("Adding {} to {}", transform, this);
 
         //         logger.info(thisJoinPoint.getSignature().toString());
     }
 
+    pointcut runPipeline(org.apache.beam.sdk.Pipeline p) : pipeline(p) && execution(* run());
 
+    before(org.apache.beam.sdk.Pipeline p) : runPipeline(p) {
+        LoggerFactory.getLogger(Pipeline.class).info("Running {} via {}", p, p.getRunner()) ;
+    }
 
     /**   public interface Validable<T> {};
      declare parents: (View.AsSingleton<T> || View.AsIterable<T> || View.AsList<T>) implements Validable<T>;
