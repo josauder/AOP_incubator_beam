@@ -12,8 +12,8 @@ aspect TracingAspect {
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     pointcut project(): within (org.apache.beam.*.*) && !within(org.apache.beam.aspects.*);
-    pointcut constructors(): execution(*.new(..)) && project();
-    pointcut methods(): project() && execution(* *(..));
+    pointcut constructors(): call(*.new(..)) && project();
+    pointcut methods(): project() && call(* *(..));
     pointcut end(): project() && call(* run(..));
 
     //before() : preinitialization(*.new(..)) && !within(TracingAspect) && transforms() {
@@ -36,7 +36,7 @@ aspect TracingAspect {
     }
 
     after(): end() {
-       System.out.println(tree);
+        System.out.println(tree);
     }
 
 }

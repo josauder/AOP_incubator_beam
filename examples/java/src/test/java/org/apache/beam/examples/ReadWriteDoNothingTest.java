@@ -4,8 +4,8 @@ import org.apache.beam.sdk.Pipeline;
 import org.apache.beam.sdk.coders.StringUtf8Coder;
 import org.apache.beam.sdk.testing.RunnableOnService;
 import org.apache.beam.sdk.testing.TestPipeline;
-import org.apache.beam.sdk.transforms.Create;
-import org.apache.beam.sdk.transforms.MapElements;
+import org.apache.beam.sdk.transforms.*;
+import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -34,9 +34,16 @@ public class ReadWriteDoNothingTest {
 
         PCollection<String> input = p.apply(Create.of(WORDS).withCoder(StringUtf8Coder.of()));
 
-        PCollection<String> output = input.apply(new WordCount.CountWords())
-                .apply(MapElements.via(new WordCount.FormatAsTextFn()));
+        PCollection<String> output = input
+                .apply(ParDo.of(new DoNothingFn()));
         //PAssert.that(output).containsInAnyOrder(COUNTS_ARRAY);
         p.run().waitUntilFinish();
+    }
+
+    public static class DoNothingFn extends DoFn<String,String> {
+        @ProcessElement
+        public void processElement(ProcessContext c) {
+            c.output(c.element());
+        }
     }
 }
