@@ -29,12 +29,13 @@ import org.apache.beam.sdk.runners.PipelineRunnerRegistrar;
 /**
  * Contains the {@link PipelineRunnerRegistrar} and {@link PipelineOptionsRegistrar} for the
  * {@link ApexRunner}.
- *
+ * <p>
  * {@link AutoService} will register Apex's implementations of the {@link PipelineRunner}
  * and {@link PipelineOptions} as available pipeline runner services.
  */
 public final class ApexRunnerRegistrar {
-    private ApexRunnerRegistrar() {}
+    private ApexRunnerRegistrar() {
+    }
 
     /**
      * Registers the {@link ApexRunner}.

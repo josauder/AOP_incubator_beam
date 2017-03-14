@@ -24,8 +24,6 @@ public class ReadWriteDoNothingTest {
 
     static final List<String> WORDS = Arrays.asList(WORDS_ARRAY);
 
-    static final String[] COUNTS_ARRAY = new String[] {
-            "hi: 1"};
 
     @Test
     @Category(RunnableOnService.class)
@@ -36,7 +34,6 @@ public class ReadWriteDoNothingTest {
 
         PCollection<String> output = input
                 .apply(ParDo.of(new DoNothingFn()));
-        //PAssert.that(output).containsInAnyOrder(COUNTS_ARRAY);
         p.run().waitUntilFinish();
     }
 

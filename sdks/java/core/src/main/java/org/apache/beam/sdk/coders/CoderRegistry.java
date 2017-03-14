@@ -315,7 +315,7 @@ public class CoderRegistry implements CoderProvider {
     CannotProvideCoderException factoryException;
     try {
       CoderFactory coderFactory = getDefaultCoderFactory(clazz);
-      LOG.debug("Default coder for {} found by factory", clazz);
+      //LOG.debug("Default coder for {} found by factory", clazz);
       @SuppressWarnings("unchecked")
       Coder<T> coder = (Coder<T>) coderFactory.create(Collections.<Coder<?>>emptyList());
       return coder;
@@ -695,7 +695,7 @@ public class CoderRegistry implements CoderProvider {
       throws CannotProvideCoderException {
 
     Coder<?> defaultCoder = getDefaultCoder(typeDescriptor.getType(), typeCoderBindings);
-    LOG.debug("Default coder for {}: {}", typeDescriptor, defaultCoder);
+    //LOG.debug("Default coder for {}: {}", typeDescriptor, defaultCoder);
     @SuppressWarnings("unchecked")
     Coder<T> result = (Coder<T>) defaultCoder;
     return result;

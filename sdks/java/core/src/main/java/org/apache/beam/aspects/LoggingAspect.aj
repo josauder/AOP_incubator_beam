@@ -1,7 +1,6 @@
 package org.apache.beam.aspects;
 
 import org.apache.beam.sdk.Pipeline;
-import org.apache.beam.sdk.runners.TransformHierarchy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,64 +10,65 @@ import org.slf4j.LoggerFactory;
  */
 
 aspect LoggingAspect {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    pointcut project() : within(org.apache.beam.*.*) && !within(org.apache.beam.aspects.*);
-
-
+    pointcut aspects() : within(org.apache.beam.aspects.*);
+    pointcut project() : within(org.apache.beam.*.*) && !aspects();
     pointcut pipeline(org.apache.beam.sdk.Pipeline p) : this(p)  && project();
-
-    pointcut pushNode(
-            org.apache.beam.sdk.Pipeline p,
-            java.lang.String s,
-            org.apache.beam.sdk.values.PInput in,
-            org.apache.beam.sdk.transforms.PTransform t):
-        pipeline(p)
-        && call(* pushNode(..))
-        && args(s,in,t)
-        //&& target(org.apache.beam.sdk.runners.TransformHierarchy)
-       ;
+    pointcut coderRegistry(org.apache.beam.sdk.coders.CoderRegistry r) : this(r) && project();
 
     before (org.apache.beam.sdk.Pipeline p,
             java.lang.String s,
             org.apache.beam.sdk.values.PInput in,
-            org.apache.beam.sdk.transforms.PTransform t): pushNode(p,s,in,t)  {//args(org.apache.beam.sdk.)  /*&& (!within(LoggingAspect))*/ {
-        LoggerFactory.getLogger(p.getClass())
-                .info("Adding {} to {}", t, p);
-
-        //    .debug("Adding {} to {}", transform, this);
-
-        //         logger.info(thisJoinPoint.getSignature().toString());
+            org.apache.beam.sdk.transforms.PTransform t):
+            pipeline(p) && call(* pushNode(..)) && args(s,in,t) {
+        LoggerFactory.getLogger(p.getClass()).info("Adding {} to {}", t, p);
     }
 
-    pointcut runPipeline(org.apache.beam.sdk.Pipeline p) : pipeline(p) && execution(* run());
-
-    before(org.apache.beam.sdk.Pipeline p) : runPipeline(p) {
+    before(org.apache.beam.sdk.Pipeline p) : pipeline(p) && execution(* run()) {
         LoggerFactory.getLogger(Pipeline.class).info("Running {} via {}", p, p.getRunner()) ;
     }
 
-    /**   public interface Validable<T> {};
-     declare parents: (View.AsSingleton<T> || View.AsIterable<T> || View.AsList<T>) implements Validable<T>;
 
-     public void Validable.validate(PCollection<T> input) {
-     try {
-     GroupByKey.applicableTo(input);
-     } catch (IllegalStateException e) {
-     throw new IllegalStateException("Unable to create a side-input view from input", e);
-     }
-     }
+    Object around(org.apache.beam.sdk.coders.CoderRegistry r) :
+            coderRegistry(r) &&
+            call(* getDefaultCoder(..)) {
+        Object o = proceed(r);
+        LoggerFactory.getLogger(r.getClass()).info("Default coder for {}: {}", r, o);
+        return o;
+    }
+
+    before(org.apache.beam.sdk.coders.CoderRegistry r) : coderRegistry(r) {
+        LoggerFactory.getLogger(r.getClass()).info(r+""+thisJoinPoint.getSignature());
+    }
+
+    after(org.apache.beam.sdk.coders.CoderRegistry r,
+            java.lang.Class c) :
+            coderRegistry(r) && execution(* getDefaultCoderFactory(..)) && args(c) {
+        LoggerFactory.getLogger(r.getClass()).info("Default coder for {} found by factory", c);
+    }
+
+    /*
+    void around(org.apache.beam.sdk.io.Sink.WriteOperation op) :
+            target(op) && call(void initialize(..)) && project() {
+        Logger LOG= LoggerFactory.getLogger(op.getClass());
+        LOG.info("Initializing write operation {}", op);
+        op.initialize(c.getPipelineOptions());
+        LOG.debug("Done initializing write operation {}", op);
+    }*/
 
 
-
-     pointcut populateDisplayData(DisplayData.Builder builder) :
-     call(ApproximateQuantiles.ApproximateQuantilesCombineFn<T, ComparatorT extends Comparator<T> & Serializable>
-     .populateDisplayData(DisplayData.Builder) ||
-
-     ApproximateUnique.Globally<T> extends PTransform<PCollection<T>, PCollection<Long>>
-     .populateDisplayData(DisplayData.Builder) ||
-
-     ApproximateUnique.PerKey<K, V> extends PTransform<PCollection<KV<K, V>>, PCollection<KV<K, Long>>>
-     .populateDisplayData(DisplayData.Builder) ||
-     );
+    /*
+      LOG.info("Finalizing write operation {}.", writeOperation);
+              List<WriteT> results = Lists.newArrayList(c.sideInput(resultsView));
+              LOG.debug("Side input initialized to finalize write operation {}.", writeOperation);
      */
+
+
+    /*
+          LOG.info("Opening writer for write operation {}", writeOperation);
+          writer = writeOperation.createWriter(c.getPipelineOptions());
+          writer.open(UUID.randomUUID().toString());
+          LOG.debug("Done opening writer {} for operation {}", writer, writeOperationView);
+     */
+
+
 }

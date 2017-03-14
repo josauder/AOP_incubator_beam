@@ -28,33 +28,34 @@ import org.apache.beam.sdk.runners.PipelineRunnerRegistrar;
 /**
  * Contains the {@link PipelineRunnerRegistrar} and {@link PipelineOptionsRegistrar} for the
  * {@link SparkRunner}.
- *
+ * <p>
  * {@link AutoService} will register Spark's implementations of the {@link PipelineRunner}
  * and {@link PipelineOptions} as available pipeline runner services.
  */
 public final class SparkRunnerRegistrar {
-  private SparkRunnerRegistrar() {}
-
-  /**
-   * Registers the {@link SparkRunner}.
-   */
-  @AutoService(PipelineRunnerRegistrar.class)
-  public static class Runner implements PipelineRunnerRegistrar {
-    @Override
-    public Iterable<Class<? extends PipelineRunner<?>>> getPipelineRunners() {
-      return ImmutableList
-          .<Class<? extends PipelineRunner<?>>>of(SparkRunner.class, TestSparkRunner.class);
+    private SparkRunnerRegistrar() {
     }
-  }
 
-  /**
-   * Registers the {@link SparkPipelineOptions}.
-   */
-  @AutoService(PipelineOptionsRegistrar.class)
-  public static class Options implements PipelineOptionsRegistrar {
-    @Override
-    public Iterable<Class<? extends PipelineOptions>> getPipelineOptions() {
-      return ImmutableList.<Class<? extends PipelineOptions>>of(SparkPipelineOptions.class);
+    /**
+     * Registers the {@link SparkRunner}.
+     */
+    @AutoService(PipelineRunnerRegistrar.class)
+    public static class Runner implements PipelineRunnerRegistrar {
+        @Override
+        public Iterable<Class<? extends PipelineRunner<?>>> getPipelineRunners() {
+            return ImmutableList
+                    .<Class<? extends PipelineRunner<?>>>of(SparkRunner.class, TestSparkRunner.class);
+        }
     }
-  }
+
+    /**
+     * Registers the {@link SparkPipelineOptions}.
+     */
+    @AutoService(PipelineOptionsRegistrar.class)
+    public static class Options implements PipelineOptionsRegistrar {
+        @Override
+        public Iterable<Class<? extends PipelineOptions>> getPipelineOptions() {
+            return ImmutableList.<Class<? extends PipelineOptions>>of(SparkPipelineOptions.class);
+        }
+    }
 }

@@ -34,7 +34,8 @@ import org.apache.beam.sdk.runners.PipelineRunnerRegistrar;
  *
  */
 public class FlinkRunnerRegistrar {
-  private FlinkRunnerRegistrar() { }
+  private FlinkRunnerRegistrar() {
+  }
 
   /**
    * Pipeline runner registrar.
@@ -44,8 +45,7 @@ public class FlinkRunnerRegistrar {
     @Override
     public Iterable<Class<? extends PipelineRunner<?>>> getPipelineRunners() {
       return ImmutableList.<Class<? extends PipelineRunner<?>>>of(
-          FlinkRunner.class,
-          TestFlinkRunner.class);
+              FlinkRunner.class, TestFlinkRunner.class);
     }
   }
 

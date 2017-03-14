@@ -173,10 +173,10 @@ public class Write {
         // Lazily initialize the Writer
         if (writer == null) {
           WriteOperation<T, WriteT> writeOperation = c.sideInput(writeOperationView);
-          LOG.info("Opening writer for write operation {}", writeOperation);
+          //LOG.info("Opening writer for write operation {}", writeOperation);
           writer = writeOperation.createWriter(c.getPipelineOptions());
           writer.open(UUID.randomUUID().toString());
-          LOG.debug("Done opening writer {} for operation {}", writer, writeOperationView);
+          //LOG.debug("Done opening writer {} for operation {}", writer, writeOperationView);
         }
         try {
           writer.write(c.element());
@@ -231,10 +231,10 @@ public class Write {
         // In a sharded write, single input element represents one shard. We can open and close
         // the writer in each call to processElement.
         WriteOperation<T, WriteT> writeOperation = c.sideInput(writeOperationView);
-        LOG.info("Opening writer for write operation {}", writeOperation);
+        //LOG.info("Opening writer for write operation {}", writeOperation);
         Writer<T, WriteT> writer = writeOperation.createWriter(c.getPipelineOptions());
         writer.open(UUID.randomUUID().toString());
-        LOG.debug("Done opening writer {} for operation {}", writer, writeOperationView);
+        //LOG.debug("Done opening writer {} for operation {}", writer, writeOperationView);
 
         try {
           for (T t : c.element().getValue()) {
@@ -340,9 +340,9 @@ public class Write {
             @ProcessElement
             public void processElement(ProcessContext c) throws Exception {
               WriteOperation<T, WriteT> writeOperation = c.element();
-              LOG.info("Initializing write operation {}", writeOperation);
+              //LOG.info("Initializing write operation {}", writeOperation);
               writeOperation.initialize(c.getPipelineOptions());
-              LOG.debug("Done initializing write operation {}", writeOperation);
+              //LOG.debug("Done initializing write operation {}", writeOperation);
               // The WriteOperation is also the output of this ParDo, so it can have mutable
               // state.
               c.output(writeOperation);
@@ -394,9 +394,9 @@ public class Write {
             @ProcessElement
             public void processElement(ProcessContext c) throws Exception {
               WriteOperation<T, WriteT> writeOperation = c.element();
-              LOG.info("Finalizing write operation {}.", writeOperation);
+              //LOG.info("Finalizing write operation {}.", writeOperation);
               List<WriteT> results = Lists.newArrayList(c.sideInput(resultsView));
-              LOG.debug("Side input initialized to finalize write operation {}.", writeOperation);
+              //LOG.debug("Side input initialized to finalize write operation {}.", writeOperation);
 
               // We must always output at least 1 shard, and honor user-specified numShards if set.
               int minShardsNeeded = Math.max(1, getNumShards());

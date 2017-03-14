@@ -8,16 +8,10 @@ import org.slf4j.LoggerFactory;
  * Created by jonathan on 17.01.17.
  */
 aspect TracingAspect {
-
-    Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    pointcut project(): within (org.apache.beam.*.*) && !within(org.apache.beam.aspects.*);
+    pointcut aspects(): within (org.apache.beam.aspects.*);
+    pointcut project(): within (org.apache.beam.*.*) && !aspects();
     pointcut constructors(): call(*.new(..)) && project();
     pointcut methods(): project() && call(* *(..));
-    pointcut end(): project() && call(* run(..));
-
-    //before() : preinitialization(*.new(..)) && !within(TracingAspect) && transforms() {
-    //before() : initialization(*.new(..)) && !within(TracingAspect) && transforms(){
 
     Tree<Signature> tree = new Tree<>(null, null);
     Tree<Signature> currentNode = tree;
@@ -29,14 +23,12 @@ aspect TracingAspect {
             child = new Tree<>(sig,currentNode);
         }
         currentNode = child;
+        if (currentNode==tree) {
+            System.out.println(tree);
+        }
         currentNode.incrementCounter();
         Object o = proceed();
         currentNode = currentNode.getParent();
         return o;
     }
-
-    after(): end() {
-        System.out.println(tree);
-    }
-
 }
