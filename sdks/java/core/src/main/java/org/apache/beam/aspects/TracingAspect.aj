@@ -23,12 +23,12 @@ aspect TracingAspect {
             child = new Tree<>(sig,currentNode);
         }
         currentNode = child;
-        if (currentNode==tree) {
-            System.out.println(tree);
-        }
         currentNode.incrementCounter();
         Object o = proceed();
         currentNode = currentNode.getParent();
+        if (currentNode==tree) {
+            System.out.println(tree);
+        }
         return o;
     }
 }
